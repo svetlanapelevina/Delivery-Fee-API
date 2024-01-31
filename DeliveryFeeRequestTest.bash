@@ -1,4 +1,4 @@
-curl -X POST --location "http://127.0.0.1:8080/delivery-fee" \
+curl -X POST --location "http://0.0.0.0:8080/delivery-fee" \
     -H "Content-Type: application/json" \
     -d '{
           "cart_value": 790,
