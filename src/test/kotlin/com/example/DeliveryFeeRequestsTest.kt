@@ -205,11 +205,11 @@ class DeliveryFeeRequestsTest {
 
             assertEquals(expectedStatus, response.status)
 
-            if (response.status.isSuccess()) {
-                val decodedResponse: DeliveryFeeResponse =
-                    Json.decodeFromString<DeliveryFeeResponse>(response.bodyAsText())
-                assertEquals(expectedResponse, decodedResponse, message)
-            }
+            if (!response.status.isSuccess()) return@testApplication
+
+            val decodedResponse: DeliveryFeeResponse =
+                Json.decodeFromString<DeliveryFeeResponse>(response.bodyAsText())
+            assertEquals(expectedResponse, decodedResponse, message)
         }
     }
 }
