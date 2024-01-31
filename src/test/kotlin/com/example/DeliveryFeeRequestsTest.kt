@@ -205,7 +205,7 @@ class DeliveryFeeRequestsTest {
 
             assertEquals(expectedStatus, response.status)
 
-            if (response.status == HttpStatusCode.OK) {
+            if (response.status.isSuccess()) {
                 val decodedResponse: DeliveryFeeResponse =
                     Json.decodeFromString<DeliveryFeeResponse>(response.bodyAsText())
                 assertEquals(expectedResponse, decodedResponse, message)
