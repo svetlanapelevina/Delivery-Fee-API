@@ -7,8 +7,10 @@ const val MIN_ITEMS_WITHOUT_BULK_SURCHARGE: Int = 12
 
 class CartItemsSurcharge(private val numberOfItems: Int) : Surcharge {
     override val amount: Double =
-        if (this.numberOfItems <= MIN_ITEMS_WITHOUT_SURCHARGE) 0.0
-        else (this.numberOfItems - MIN_ITEMS_WITHOUT_SURCHARGE) * SURCHARGE_PER_ITEM_OVER_MIN +
-            if (this.numberOfItems <= MIN_ITEMS_WITHOUT_BULK_SURCHARGE) 0.0 else SURCHARGE_FOR_BULK_ITEMS
-
+        if (this.numberOfItems <= MIN_ITEMS_WITHOUT_SURCHARGE) {
+            0.0
+        } else {
+            (this.numberOfItems - MIN_ITEMS_WITHOUT_SURCHARGE) * SURCHARGE_PER_ITEM_OVER_MIN +
+                if (this.numberOfItems <= MIN_ITEMS_WITHOUT_BULK_SURCHARGE) 0.0 else SURCHARGE_FOR_BULK_ITEMS
+        }
 }

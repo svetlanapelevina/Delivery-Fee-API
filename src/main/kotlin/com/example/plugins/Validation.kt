@@ -1,14 +1,13 @@
 package com.example.plugins
 
-import com.example.models.DeliveryFeeRequest
 import com.example.constants.*
+import com.example.models.DeliveryFeeRequest
 import io.ktor.server.application.*
 import io.ktor.server.plugins.requestvalidation.*
 import java.text.ParseException
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
-
 
 fun Application.configureDeliveryFeeRequestValidation() {
     install(RequestValidation) {
