@@ -187,8 +187,8 @@ class DeliveryFeeRequestsTest {
     fun testDeliveryFeeRequest(
         request: DeliveryFeeRequest,
         expectedStatus: HttpStatusCode,
-        expectedResponse: Any? = null,
-        message: String = "",
+        expectedResponse: DeliveryFeeResponse? = null,
+        message: String = ""
     ) {
         testApplication {
             val client =
